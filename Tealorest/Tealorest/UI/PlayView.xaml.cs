@@ -12,8 +12,8 @@ namespace Tealorest.UI
         {
             InitializeComponent();
 
-            Brush brush = new SolidColorBrush(palette.BackgroundColor);
-            Brush brush2 = new SolidColorBrush(palette.ForegroundColor);
+            Brush brush = new SolidColorBrush(palette.DarkestMain);
+            Brush brush2 = new SolidColorBrush(palette.LightestMain);
 
             xTopBorder.Fill = brush;
             xBottomBorder.Fill = brush;
