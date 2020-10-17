@@ -11,7 +11,11 @@ namespace Tealorest
         {
             InitializeComponent();
 
-            Palette palette = new Palette() { Color1 = Color.FromRgb(19, 19, 19) };
+            Palette palette = new Palette()
+            {
+                BackgroundColor = Color.FromRgb(0, 43, 54),
+                ForegroundColor = Color.FromRgb(253, 246, 227)
+            };
 
             Content = new PlayView(palette);
         }

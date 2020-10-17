@@ -4,6 +4,7 @@ namespace Tealorest.Data
 {
     public class Palette
     {
-        public Color Color1;
+        public Color BackgroundColor;
+        public Color ForegroundColor;
     }
 }

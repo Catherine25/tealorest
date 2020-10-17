@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Tealorest"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="PixelFont">pack://application:,,,/Fonts/#Pixel Font</FontFamily>
     </Application.Resources>
 </Application>
