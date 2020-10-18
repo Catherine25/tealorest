@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using Tealorest.Data;
 using Tealorest.UI;
@@ -7,9 +8,13 @@ namespace Tealorest
 {
     public partial class MainWindow : Window
     {
+        private readonly KeyMapping KeyMapping;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            KeyMapping = new KeyMapping();
 
             Palette palette = new Palette()
             {
@@ -27,6 +32,11 @@ namespace Tealorest
             };
 
             Content = new PlayView(palette);
+
+            KeyDown += MainWindow_KeyDown;
         }
+
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e) =>
+            (Content as PlayView).MoveCharacter(KeyMapping.Map(e.Key));
     }
 }
