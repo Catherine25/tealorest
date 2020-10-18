@@ -7,10 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\Images\hero1.png" />
+    <None Remove="Data\Images\hero2.png" />
     <None Remove="Fonts\Pixel Font.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Data\Images\hero1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\Images\hero2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Fonts\Pixel Font.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

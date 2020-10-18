@@ -8,12 +8,14 @@ namespace Tealorest.UI
     {
         public PlayView() => InitializeComponent();
 
+        private Character.Character _character;
+
         public PlayView(Palette palette)
         {
             InitializeComponent();
 
-            Brush brush = new SolidColorBrush(palette.BackgroundColor);
-            Brush brush2 = new SolidColorBrush(palette.ForegroundColor);
+            Brush brush = new SolidColorBrush(palette.DarkestMain);
+            Brush brush2 = new SolidColorBrush(palette.LightestMain);
 
             xTopBorder.Fill = brush;
             xBottomBorder.Fill = brush;
@@ -25,6 +27,17 @@ namespace Tealorest.UI
             xPlayButton.Foreground = brush2;
             xSettingsButton.Foreground = brush2;
             xExitButton.Foreground = brush2;
+
+            _character = new Character.Character();
+            xPlayArea.Children.Add(_character);
+        }
+
+        public void MoveCharacter(Direction? direction)
+        {
+            if (direction == null)
+                return;
+
+            _character.Move(direction.Value, 8);
         }
     }
 }
