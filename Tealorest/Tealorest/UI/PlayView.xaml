@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
 
         <Rectangle x:Name="xTopBorder" Grid.Row="0"/>
+        <Grid x:Name="xPlayArea" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
         <Rectangle x:Name="xBottomBorder" Grid.Row="2"/>
 
         <Grid x:Name="xMenuGrid" Grid.Row="2">
