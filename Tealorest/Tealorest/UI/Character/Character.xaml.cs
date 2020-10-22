@@ -10,6 +10,8 @@ namespace Tealorest.UI.Character
         {
             InitializeComponent();
 
+            xCharacterRight.Visibility = Visible;
+
             xAsset.Height = 128;
             xAsset.Width = 128;
         }
