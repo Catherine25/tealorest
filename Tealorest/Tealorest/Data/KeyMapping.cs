@@ -11,13 +11,7 @@ namespace Tealorest.Data
 
     public class KeyMapping
     {
-        private Dictionary<Key, Direction> Mapping = new Dictionary<Key, Direction>
-        {
-            { Key.A, Direction.Left },
-            { Key.D, Direction.Right },
-            { Key.Left, Direction.Left },
-            { Key.Right, Direction.Right  }
-        };
+        public Dictionary<Key, Direction> Mapping = new Dictionary<Key, Direction>();
 
         public Direction? Map(Key key) =>
             Mapping.ContainsKey(key) ? (Direction?)Mapping[key] : null;
