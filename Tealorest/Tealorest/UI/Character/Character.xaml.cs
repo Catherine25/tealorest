@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Configuration;
+using System.Windows.Controls;
 using Tealorest.Data;
 using static System.Windows.Visibility;
 
@@ -6,14 +7,17 @@ namespace Tealorest.UI.Character
 {
     public partial class Character : UserControl
     {
+        private readonly int StepSize;
+
         public Character()
         {
             InitializeComponent();
 
+            StepSize = int.Parse(ConfigurationManager.AppSettings["character-step"]);
+
             xCharacterRight.Visibility = Visible;
 
-            xAsset.Height = 128;
-            xAsset.Width = 128;
+            xAsset.SetSize(Settings.GetSize("character"));
         }
 
         private void Turn(Direction direction)
@@ -30,16 +34,16 @@ namespace Tealorest.UI.Character
             }
         }
 
-        public void Move(Direction direction, int pixels)
+        public void Move(Direction direction)
         {
             Turn(direction);
 
             var margin = Margin;
 
             if (direction == Direction.Left)
-                margin.Left -= pixels;
+                margin.Left -= StepSize;
             else
-                margin.Left += pixels;
+                margin.Left += StepSize;
 
             Margin = margin;
         }
