@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:Tealorest.UI.Character"
              mc:Ignorable="d" 
              d:DesignHeight="320" d:DesignWidth="320">
-    <Grid x:Name="xAsset">
-        <Image x:Name="xCharacterRight" Source="/Data/Images/hero1.png" Visibility="Hidden"/>
+    <Grid x:Name="xAsset" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+        <Image x:Name="xCharacterRight" Source="/Data/Images/hero1.png" Visibility="Visible"/>
         <Image x:Name="xCharacterLeft" Source="/Data/Images/hero2.png" Visibility="Hidden"/>
     </Grid>
 </UserControl>
