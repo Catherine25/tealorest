@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
 using Tealorest.Data;
 using Tealorest.UI;
 
@@ -15,20 +14,22 @@ namespace Tealorest
             InitializeComponent();
 
             KeyMapping = new KeyMapping();
+            KeyMapping.Mapping.Add(Settings.GetKeyMapping(Direction.Left), Direction.Left);
+            KeyMapping.Mapping.Add(Settings.GetKeyMapping(Direction.Right), Direction.Right);
 
             Palette palette = new Palette()
             {
-                LightestMain = Color.FromRgb(253, 246, 227),
-                LightestAdditional = Color.FromRgb(238, 232, 213),
+                LightestMain = Settings.GetColor("lightest-main"),
+                LightestAdditional = Settings.GetColor("lightest-additional"),
 
-                LighterMiddleMain = Color.FromRgb(147, 161, 161),
-                LighterMiddleAdditional = Color.FromRgb(131, 148, 150),
+                LighterMiddleMain = Settings.GetColor("lighter-middle-main"),
+                LighterMiddleAdditional = Settings.GetColor("lighter-middle-additional"),
 
-                DarkerMiddleMain = Color.FromRgb(88, 110, 117),
-                DarkerMiddleAdditional = Color.FromRgb(101, 123, 131),
+                DarkerMiddleMain = Settings.GetColor("darker-middle-main"),
+                DarkerMiddleAdditional = Settings.GetColor("darker-middle-additional"),
 
-                DarkestMain = Color.FromRgb(0, 43, 54),
-                DarkestAdditional = Color.FromRgb(7, 54, 66)
+                DarkestMain = Settings.GetColor("darkest-main"),
+                DarkestAdditional = Settings.GetColor("darkest-additional")
             };
 
             Content = new PlayView(palette);
