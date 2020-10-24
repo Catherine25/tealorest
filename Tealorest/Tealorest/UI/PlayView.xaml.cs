@@ -29,7 +29,7 @@ namespace Tealorest.UI
             xExitButton.Foreground = brush2;
 
             _character = new Character.Character();
-            xPlayArea.Children.Add(_character);
+            xPlayArea.Add(_character);
         }
 
         public void MoveCharacter(Direction? direction)
@@ -37,7 +37,7 @@ namespace Tealorest.UI
             if (direction == null)
                 return;
 
-            _character.Move(direction.Value, 8);
+            _character.Move(direction.Value);
         }
     }
 }
