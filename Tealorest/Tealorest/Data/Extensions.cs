@@ -41,5 +41,14 @@ namespace Tealorest.Data
             margin.Bottom += bottom;
             element.Margin = margin;
         }
+
+        public static int GetGridItemsCount(this Grid grid, Size itemSize)
+        {
+            Size gridSize = grid.GetSize();
+
+            int count = (int)(gridSize.Width / itemSize.Width) + 1;
+
+            return count;
+        }
     }
 }
