@@ -5,6 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Tealorest.UI"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid x:Name="xMain" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+             d:DesignHeight="320" d:DesignWidth="640">
+    <Grid x:Name="xMain" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid x:Name="xFront" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Panel.ZIndex="3"/>
+        <Grid x:Name="xMiddle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Panel.ZIndex="2"/>
+        <Grid x:Name="xBack" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Panel.ZIndex="1"/>
+    </Grid>
 </UserControl>

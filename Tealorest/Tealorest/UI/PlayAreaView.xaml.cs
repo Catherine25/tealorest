@@ -12,29 +12,42 @@ namespace Tealorest.UI
             Loaded += PlayAreaView_Loaded;
         }
 
-        private void PlayAreaView_Loaded(object sender, RoutedEventArgs e) => DrawSurface();
+        private void PlayAreaView_Loaded(object sender, RoutedEventArgs e)
+        {
+            GenerateItems(1);
+            DrawSurface();
+        }
 
         public void Add(Character.Character character) =>
-            xMain.Children.Add(character);
+            xMiddle.Children.Add(character);
 
         private void DrawSurface()
         {
             Size surfaceSize = Settings.GetSize("surface");
-            Size gridSize = xMain.GetSize();
-
-            int count = (int)(gridSize.Width / surfaceSize.Width) + 1;
+            int count = xFront.GetGridItemsCount(surfaceSize);
 
             for (int i = 0; i < count; i++)
             {
-                Surface surface = new Surface(surfaceSize)
-                {
-                    HorizontalAlignment = HorizontalAlignment.Left,
-                    VerticalAlignment = VerticalAlignment.Bottom
-                };
+                Surface surface = new Surface(surfaceSize);
 
                 surface.ModifyMarginLeft(surfaceSize.Width * i);
 
-                xMain.Children.Add(surface);
+                xFront.Children.Add(surface);
+            }
+        }
+
+        private void GenerateItems(int count)
+        {
+            Size treeSize = Settings.GetSize("tree");
+            int countt = xBack.GetGridItemsCount(treeSize);
+
+            for (int i = 0; i < countt; i++)
+            {
+                ItemView item = new ItemView("tree");
+
+                item.ModifyMarginLeft(treeSize.Width * i);
+
+                xBack.Children.Add(item);
             }
         }
     }
