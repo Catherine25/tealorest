@@ -28,6 +28,8 @@ namespace Tealorest.UI
             xSettingsButton.Foreground = brush2;
             xExitButton.Foreground = brush2;
 
+            xPlayArea.Background = new SolidColorBrush(palette.DarkestAdditional);
+
             _character = new Character.Character();
             xPlayArea.Add(_character);
         }
