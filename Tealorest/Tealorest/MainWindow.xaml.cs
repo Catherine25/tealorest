@@ -2,12 +2,15 @@
 using System.Windows.Input;
 using Tealorest.Data;
 using Tealorest.UI;
+using Tealorest.UI.Settings;
 
 namespace Tealorest
 {
     public partial class MainWindow : Window
     {
         private readonly KeyMapping KeyMapping;
+        private PlayView PlayView;
+        private SettingsView SettingsView;
 
         public MainWindow()
         {
@@ -32,9 +35,17 @@ namespace Tealorest
                 DarkestAdditional = Settings.GetColor("darkest-additional")
             };
 
-            Content = new PlayView(palette);
+            PlayView = new PlayView(palette);
+            PlayView.SettingsButtonClicked += PlayView_SettingsButtonClicked;
+            Content = PlayView;
 
             KeyDown += MainWindow_KeyDown;
+        }
+
+        private void PlayView_SettingsButtonClicked()
+        {
+            SettingsView = new SettingsView();
+            Content = SettingsView;
         }
 
         private void MainWindow_KeyDown(object sender, KeyEventArgs e) =>

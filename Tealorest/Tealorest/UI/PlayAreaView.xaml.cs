@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using Tealorest.Data;
 
 namespace Tealorest.UI
@@ -23,12 +27,20 @@ namespace Tealorest.UI
 
         private void DrawSurface()
         {
-            Size surfaceSize = Settings.GetSize("surface");
+            //getting images
+            string initialPath = Path.Combine(Environment.CurrentDirectory, "Data", "images", "grass");
+            List<string> fileNames = GetItemNames(initialPath);
+
+            //getting sizes
+            Size surfaceSize = Data.Settings.GetSize("surface");
             int count = xFront.GetGridItemsCount(surfaceSize);
+
+            //randomize surface images
+            Random random = new Random();
 
             for (int i = 0; i < count; i++)
             {
-                Surface surface = new Surface(surfaceSize);
+                Surface surface = new Surface(Path.Combine(initialPath, fileNames[random.Next(fileNames.Count)]), surfaceSize);
 
                 surface.ModifyMarginLeft(surfaceSize.Width * i);
 
@@ -38,7 +50,7 @@ namespace Tealorest.UI
 
         private void GenerateItems(int count)
         {
-            Size treeSize = Settings.GetSize("tree");
+            Size treeSize = Data.Settings.GetSize("tree");
             int countt = xBack.GetGridItemsCount(treeSize);
 
             for (int i = 0; i < countt; i++)
@@ -49,6 +61,19 @@ namespace Tealorest.UI
 
                 xBack.Children.Add(item);
             }
+        }
+
+        private List<string> GetItemNames(string path)
+        {
+            List<string> files = new List<string>();
+
+            DirectoryInfo d = new DirectoryInfo(path);
+            FileInfo[] Files = d.GetFiles("*.png");
+
+            foreach(FileInfo file in Files)
+                files.Add(file.Name);
+
+            return files;
         }
     }
 }

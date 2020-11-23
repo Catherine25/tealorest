@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Tealorest.UI"
              mc:Ignorable="d" 
              d:DesignHeight="160" d:DesignWidth="160">
-    <Image x:Name="xImage" Source="/Data/Images/grass.png" RenderOptions.BitmapScalingMode="NearestNeighbor"
+    <Image x:Name="xImage" RenderOptions.BitmapScalingMode="NearestNeighbor"
            Width="160" Height="160"
            HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 </UserControl>

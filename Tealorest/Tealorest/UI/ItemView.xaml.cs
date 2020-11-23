@@ -17,7 +17,7 @@ namespace Tealorest.UI
 
         private void SetSource(string name)
         {
-            string path = Path.Combine(Environment.CurrentDirectory, "Data", "Images", $"{name}.png");
+            string path = Path.Combine(Environment.CurrentDirectory, "Data", "images", $"{name}.png");
             xImage.Source = new BitmapImage(new Uri(path));
         }
     }
