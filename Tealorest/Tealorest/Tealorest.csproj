@@ -7,26 +7,41 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\Images\grass.png" />
-    <None Remove="Data\Images\hero1.png" />
-    <None Remove="Data\Images\hero2.png" />
-    <None Remove="Data\Images\tree.png" />
+    <None Remove="Data\images\grass\grass.png" />
+    <None Remove="Data\images\grass\grass1.png" />
+    <None Remove="Data\images\grass\grass2.png" />
+    <None Remove="Data\images\grass\grass3.png" />
+    <None Remove="Data\images\grass\grass4.png" />
+    <None Remove="Data\images\hero\hero1.png" />
+    <None Remove="Data\images\hero\hero2.png" />
+    <None Remove="Data\images\tree.png" />
     <None Remove="Fonts\Pixel Font.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Data\Images\grass.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Data\Images\hero1.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Data\Images\hero2.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <EmbeddedResource Include="Data\Images\tree.png">
+    <EmbeddedResource Include="Data\images\grass\grass2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data\images\grass\grass3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\images\grass\grass4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\images\tree.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\images\grass\grass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\images\grass\grass1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Resource Include="Data\images\hero\hero1.png" />
+    <Resource Include="Data\images\hero\hero2.png" />
     <Resource Include="Fonts\Pixel Font.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
