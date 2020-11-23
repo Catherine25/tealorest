@@ -17,7 +17,7 @@ namespace Tealorest.UI.Character
 
             xCharacterRight.Visibility = Visible;
 
-            xAsset.SetSize(Settings.GetSize("character"));
+            xAsset.SetSize(Data.Settings.GetSize("character"));
         }
 
         private void Turn(Direction direction)
