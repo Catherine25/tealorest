@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\images\flower\blue-flower.png" />
+    <None Remove="Data\images\flower\flower.png" />
+    <None Remove="Data\images\flower\flower1.png" />
+    <None Remove="Data\images\flower\flower2.png" />
     <None Remove="Data\images\grass\grass.png" />
     <None Remove="Data\images\grass\grass1.png" />
     <None Remove="Data\images\grass\grass2.png" />
@@ -14,11 +18,25 @@
     <None Remove="Data\images\grass\grass4.png" />
     <None Remove="Data\images\hero\hero1.png" />
     <None Remove="Data\images\hero\hero2.png" />
+    <None Remove="Data\images\pink-flower.png" />
     <None Remove="Data\images\tree.png" />
+    <None Remove="Data\images\tree\tree2.png" />
     <None Remove="Fonts\Pixel Font.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Data\images\flower\blue-flower.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\images\flower\flower.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\images\flower\flower1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\images\flower\flower2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Data\images\grass\grass2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -28,7 +46,7 @@
     <EmbeddedResource Include="Data\images\grass\grass4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Data\images\tree.png">
+    <EmbeddedResource Include="Data\images\tree\tree.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
@@ -40,8 +58,14 @@
     <EmbeddedResource Include="Data\images\grass\grass1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data\images\tree\tree2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Resource Include="Data\images\hero\hero1.png" />
     <Resource Include="Data\images\hero\hero2.png" />
+    <EmbeddedResource Include="Data\images\pink-flower.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Resource Include="Fonts\Pixel Font.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
